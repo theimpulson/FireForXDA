@@ -1,9 +1,12 @@
 package dev.theimpulson.fireforxda
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
 import dev.theimpulson.fireforxda.databinding.ActivityMainBinding
 
@@ -20,9 +23,13 @@ class MainActivity : AppCompatActivity() {
 
         val viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
 
-        viewModel.getCurrentUser()
-        viewModel.user.observe(this, {
-            Log.d(TAG, it.toString())
-        })
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navController = navHostFragment.navController
+        val appBarConfiguration = AppBarConfiguration(navController.graph, binding.root)
+        binding.navView.setupWithNavController(navController)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+
+        supportActionBar?.elevation = 0f
     }
 }
