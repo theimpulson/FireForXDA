@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.theimpulson.fireforxda.network.XenforoRepository
-import dev.theimpulson.fireforxda.network.data.Alerts
+import dev.theimpulson.fireforxda.network.data.alert.Alerts
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

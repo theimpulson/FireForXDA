@@ -1,4 +1,4 @@
-package dev.theimpulson.fireforxda.network.data
+package dev.theimpulson.fireforxda.network.data.common
 
 data class Pagination(
     val current_page: Int = 0,

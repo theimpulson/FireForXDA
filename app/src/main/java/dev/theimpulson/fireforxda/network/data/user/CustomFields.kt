@@ -1,4 +1,4 @@
-package dev.theimpulson.fireforxda.network.data
+package dev.theimpulson.fireforxda.network.data.user
 
 data class CustomFields(
     val date_format: String = String(),

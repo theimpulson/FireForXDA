@@ -1,4 +1,6 @@
-package dev.theimpulson.fireforxda.network.data
+package dev.theimpulson.fireforxda.network.data.alert
+
+import dev.theimpulson.fireforxda.network.data.user.User
 
 data class UserAlert(
     val User: User = User(),
